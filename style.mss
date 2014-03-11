@@ -135,7 +135,7 @@ Map {
   polygon-fill: white
 }
 
-#brazilland2 [zoom >= 9] {
+#brazilland2 [zoom >= 4] {
   polygon-fill: white
 }
 
@@ -303,6 +303,11 @@ Map {
   [zoom>=6][zoom<8][AREA > 1000000000]
     {
     polygon-fill: @water;
+    ::outline {
+    line-color: darken(@water,25%);
+    line-width: 0.2;
+    line-join: round;
+      }
     }
 }
 
@@ -311,6 +316,11 @@ Map {
   [zoom>=8][zoom<10][AREA > 10000000]
     {
     polygon-fill: @water;
+    ::outline {
+    line-color: darken(@water,25%);
+    line-width: 0.3;
+    line-join: round;
+      }
     }
 }
 
@@ -319,6 +329,20 @@ Map {
   [zoom>=10]
     {
     polygon-fill: @water;
+    ::outline {
+    line-color: darken(@water,25%);
+    line-width: 1;
+    line-join: round;
+      }
+    }
+  [zoom>=12]
+    {
+    polygon-fill: @water;
+    ::outline {
+    line-color: darken(@water,25%);
+    line-width: 1.5;
+    line-join: round;
+      }
     }
 }
 
@@ -327,10 +351,18 @@ Map {
 // WATER WAYS
 // ==================================================================
 
-#waterwaylow[zoom>=8],
+#waterwaylow[zoom>=8] {
+  line-color: @water;
+  line-width: 1.2;
+  }
 #waterwayhigh[zoom>=12]{
   line-color: @water;
-  line-width: 1.0;
+  line-width: 2.0;
+  ::case {
+    line-color: darken(@water,25%);
+    line-width: 0.3;
+    line-join: round;
+      }
 }
 
 
@@ -338,10 +370,13 @@ Map {
 // ADMINISTRATIVE BOUNDARIES
 // ==================================================================
 
-#adminpoly [zoom>12] {
+#adminpoly [zoom > 10] {
+  text-name: '[NAME]';
+  text-face-name: @sans;}
+  [zoom > 12] {
   line-color: @admin_2;
   line-width:1;
-}
+  }
 
 #admin_line[ADMIN_LEVE="2"][zoom<=4] {
   line-color:@admin_2;
@@ -358,6 +393,8 @@ Map {
   text-size:24;
   text-wrap-width: 40;
 }
+
+//stopped here
 
 #adminline[ADMIN_LEVE="3"][zoom>=4][zoom<6] {
   line-color:@admin_2;
@@ -809,100 +846,3 @@ Map {
     text-line-spacing: 4;
   }
 }
-
-// =====================================================================
-// AREA LABELS
-// =====================================================================
-/*
-#area_label {
-  // Bring in labels gradually as one zooms in, bases on polygon area
-  [zoom>=10][area>102400000],
-  [zoom>=11][area>25600000],
-  [zoom>=13][area>1600000],
-  [zoom>=14][area>320000],
-  [zoom>=15][area>80000],
-  [zoom>=16][area>20000],
-  [zoom>=17][area>5000],
-  [zoom>=18][area>=0] {
-    text-name: "[name]";
-    text-halo-radius: 1.5;
-    text-face-name:@sans;
-    text-size: 11;
-    text-wrap-width:30;
-    text-fill: #888;
-    text-halo-fill: #fff;
-    // Specific style overrides for different types of areas:
-    [type='park'][zoom>=10] {
-      text-face-name: @sans_lt_italic;
-      text-fill: @park * 0.6;
-      text-halo-fill: lighten(@park, 10);
-    }
-    [type='golf_course'][zoom>=10] {
-      text-fill: @sports * 0.6;
-      text-halo-fill: lighten(@sports, 10);
-    }
-    [type='cemetery'][zoom>=10] {
-      text-fill: @cemetery * 0.6;
-      text-halo-fill: lighten(@cemetery, 10);
-    }
-    [type='hospital'][zoom>=10] {
-      text-fill: @hospital * 0.6;
-      text-halo-fill: lighten(@hospital, 10);
-    }
-    [type='college'][zoom>=10],
-    [type='school'][zoom>=10],
-    [type='university'][zoom>=10] {
-      text-fill: @school * 0.6;
-      text-halo-fill: lighten(@school, 10);
-    }
-    [type='water'][zoom>=10] {
-      text-fill: @water * 0.6;
-      text-halo-fill: lighten(@water, 10);
-    }
-  }
-  [zoom=15][area>1600000],
-  [zoom=16][area>80000],
-  [zoom=17][area>20000],
-  [zoom=18][area>5000] {
-    text-name: "[name]";
-    text-size: 13;
-    text-wrap-width: 60;
-    text-character-spacing: 1;
-    text-halo-radius: 2;
-  }
-  [zoom=16][area>1600000],
-  [zoom=17][area>80000],
-  [zoom=18][area>20000] {
-    text-size: 15;
-    text-character-spacing: 2;
-    text-wrap-width: 120;
-  }
-  [zoom>=17][area>1600000],
-  [zoom>=18][area>80000] {
-    text-size: 20;
-    text-character-spacing: 3;
-    text-wrap-width: 180;
-  }
-}
-   
-#poi[type='university'][zoom>=15],
-#poi[type='hospital'][zoom>=16],
-#poi[type='school'][zoom>=17],
-#poi[type='library'][zoom>=17] {
-  text-name:"[name]";
-  text-face-name:@sans;
-  text-size:10;
-  text-wrap-width:30;
-  text-fill: @poi_text;
-}
-*/
-
-/* ================================================================== */
-/* WATERWAY LABELS
-/* ================================================================== */
-/*
-
-
-/* ================================================================== */
-/* ROAD LABELS
-/* ================================================================== */

@@ -58,6 +58,48 @@
     {
       "geometry": "polygon",
       "extent": [
+        -73.99094373595261,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "adminpoly",
+      "class": "",
+      "Datasource": {
+        "file": "layers/adminpoly/admin_poly.shp",
+        "id": "adminpoly",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "adminpoly"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -74.50009105234892,
+        -35.164717386071075,
+        -28.63411624761587,
+        6.270877970323023
+      ],
+      "id": "adminline",
+      "class": "",
+      "Datasource": {
+        "file": "layers/adminline/admin_line.shp",
+        "id": "adminline",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "adminline"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         -72.9387298858415,
         -33.751395465564535,
         -29.345609530917752,
@@ -104,7 +146,10 @@
       "id": "watermed",
       "class": "",
       "Datasource": {
-        "file": "layers/watermed/water_med.shp"
+        "file": "layers/watermed/water_med.shp",
+        "id": "watermed",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -123,7 +168,10 @@
       "id": "waterwayhigh",
       "class": "",
       "Datasource": {
-        "file": "layers/waterwayhigh/waterway_high.shp"
+        "file": "layers/waterwayhigh/waterway_high.shp",
+        "id": "waterwayhigh",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -191,7 +239,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landuse"
+      "name": "landuse",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -212,7 +261,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landusehigh"
+      "name": "landusehigh",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -233,7 +283,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landuselow"
+      "name": "landuselow",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -254,28 +305,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landusemed"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99094373595261,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "adminpoly",
-      "class": "",
-      "Datasource": {
-        "file": "layers/adminpoly/admin_poly.shp",
-        "id": "adminpoly",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "adminpoly",
+      "name": "landusemed",
       "status": "off"
     },
     {
@@ -297,28 +327,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "buildings"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -74.50009105234892,
-        -35.164717386071075,
-        -28.63411624761587,
-        6.270877970323023
-      ],
-      "id": "adminline",
-      "class": "",
-      "Datasource": {
-        "file": "layers/adminline/admin_line.shp",
-        "id": "adminline",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "adminline",
+      "name": "buildings",
       "status": "off"
     },
     {
@@ -406,7 +415,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "place"
+      "name": "place",
+      "status": "off"
     }
   ],
   "scale": 1,
