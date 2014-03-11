@@ -173,11 +173,13 @@ Map {
     [TYPE='sports_center'] { polygon-fill: @sports; }
     [TYPE='stadium']       { polygon-fill: @sports; }
     [TYPE='university']    { polygon-fill: @school; }
-    [TYPE='wood']          { polygon-fill: @wooded; }
+    [TYPE='wood']          { polygon-fill: @wooded; 
+    						 polygon-opacity: 0.3}
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
-        polygon-opacity: 0.5;
+        polygon-opacity: 0.3;
       }
+    [TYPE='water']   	   { polygon-fill: @water; }
   }
 }
 
@@ -203,11 +205,13 @@ Map {
     [TYPE='sports_center'] { polygon-fill: @sports; }
     [TYPE='stadium']       { polygon-fill: @sports; }
     [TYPE='university']    { polygon-fill: @school; }
-    [TYPE='wood']          { polygon-fill: @wooded; }
+    [TYPE='wood']          { polygon-fill: @wooded; 
+    						 polygon-opacity: 0.3}
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
-        polygon-opacity: 0.5;
+        polygon-opacity: 0.3;
       }
+    [TYPE='water']   	   { polygon-fill: @water; }
   }
 }
 
@@ -233,11 +237,13 @@ Map {
     [TYPE='sports_center'] { polygon-fill: @sports; }
     [TYPE='stadium']       { polygon-fill: @sports; }
     [TYPE='university']    { polygon-fill: @school; }
-    [TYPE='wood']          { polygon-fill: @wooded; }
+    [TYPE='wood']          { polygon-fill: @wooded; 
+    						 polygon-opacity: 0.3}
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
-        polygon-opacity: 0.5;
+        polygon-opacity: 0.3;
       }
+    [TYPE='water']   	   { polygon-fill: @water; }
   }
 }
 
@@ -263,11 +269,13 @@ Map {
     [TYPE='sports_center'] { polygon-fill: @sports; }
     [TYPE='stadium']       { polygon-fill: @sports; }
     [TYPE='university']    { polygon-fill: @school; }
-    [TYPE='wood']          { polygon-fill: @wooded; }
+    [TYPE='wood']          { polygon-fill: @wooded; 
+    						 polygon-opacity: 0.3}
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
-        polygon-opacity: 0.5;
+        polygon-opacity: 0.3;
       }
+    [TYPE='water']   	   { polygon-fill: @water; }
   }
 }
 
@@ -281,6 +289,10 @@ Map {
 	  polygon-fill:@building;
   }
 }
+
+//consider adding icons for church/chapel, university and school
+//types of buildings ‘yes’, hangar, church, apartments, public,
+//house, chapel, university, school, 
 
 // ==================================================================
 // WATER AREAS
@@ -328,12 +340,12 @@ Map {
 
 #adminpoly [zoom>12] {
   line-color: @admin_2;
-  line-width:2;
+  line-width:1;
 }
 
 #admin_line[ADMIN_LEVE="2"][zoom<=4] {
   line-color:@admin_2;
-  line-width:2;
+  line-width:1;
 }
 #place[TYPE="country"][zoom<4]
 {
@@ -349,7 +361,7 @@ Map {
 
 #adminline[ADMIN_LEVE="3"][zoom>=4][zoom<6] {
   line-color:@admin_2;
-  line-width:2;
+  line-width:1;
 } 
 #place[TYPE="state"][zoom>=4][zoom<7]
 {
@@ -426,15 +438,19 @@ Map {
 
 #roadsmed[zoom>=9] 
 {
-//  [type='motorway'],
+  [TYPE='motorway'] {
+   line-color: @motorway_line;
+  }
   [TYPE='motorway_link'] {
     line-color: @motorway_line;
   }
-//  [type='trunk'],
+  [TYPE='trunk'] {
+    line-color: @trunk_line;
+  }
   [TYPE='trunk_link'] {
     line-color: @trunk_line;
   }
-  [TYPE='primary'] { line-color: @primary_line; line-width: 3; }
+  [TYPE='primary'] { line-color: @primary_line; line-width: 2.5; }
   [TYPE='secondary'] { line-color: @secondary_line; line-width: 2}
   [TYPE='tertiary'] { line-color: @standard_line; line-width: 1 }
 }
@@ -465,11 +481,17 @@ Map {
 
 #roadshigh[zoom>10]
 {
-  [RAILWAY="rail"],
-    {
-    	line-color: @rail_line; line-width: 2;
-    }
-}
+  [RAILWAY="rail"], {
+    	line-color: @rail_line; line-width: 1;
+    	[zoom > 12] {
+    	  ::line, ::hatch { line-color: @rail_line; }
+  		  ::line { line-width:1;}
+  		  ::hatch {
+    		line-width: 4;
+    		line-dasharray: 1, 24}
+		} 
+  	 }
+  }
 
 #roadshigh[zoom>12]
 {
@@ -478,24 +500,31 @@ Map {
     [RAILWAY="preserved"],
     [RAILWAY="narrow_guage"],
     [RAILWAY="light_rail"]
-    {
+    [zoom > 12] {
+    	  ::line, ::hatch { line-color: @rail_line; }
+  		  ::line { line-width:1;}
+  		  ::hatch {
+    		line-width: 4;
+    		line-dasharray: 1, 24}
+    }
+    
     	line-color: @rail_line; line-width: 2;
     }
-}
+
 
 // At higher levels the roads become more complex. We're now showing 
 // more than just automobile routes - railways, footways, and cycleways
 // come in as well.
 
 // Road width variables that are used in road & bridge styles
-@rdz11_maj: 1.6; @rdz11_med: 0.8; @rdz11_min: 0.4;
-@rdz12_maj: 2.5; @rdz12_med: 1.2; @rdz12_min: 0.8;
-@rdz13_maj: 3;   @rdz13_med: 1.5; @rdz13_min: 1;
-@rdz14_maj: 4;   @rdz14_med: 2.5; @rdz14_min: 1.6;
-@rdz15_maj: 6;   @rdz15_med: 4;   @rdz15_min: 2;
-@rdz16_maj: 8;   @rdz16_med: 6;   @rdz16_min: 4;
-@rdz17_maj: 14;  @rdz17_med: 12;  @rdz17_min: 10;
-@rdz18_maj: 20;  @rdz18_med: 17;  @rdz18_min: 14;
+//@rdz11_maj: 1.6; @rdz11_med: 0.8; @rdz11_min: 0.4;
+//@rdz12_maj: 2.5; @rdz12_med: 1.2; @rdz12_min: 0.8;
+//@rdz13_maj: 3;   @rdz13_med: 1.5; @rdz13_min: 1;
+//@rdz14_maj: 4;   @rdz14_med: 2.5; @rdz14_min: 1.6;
+//@rdz15_maj: 6;   @rdz15_med: 4;   @rdz15_min: 2;
+//@rdz16_maj: 8;   @rdz16_med: 6;   @rdz16_min: 4;
+//@rdz17_maj: 14;  @rdz17_med: 12;  @rdz17_min: 10;
+//@rdz18_maj: 20;  @rdz18_med: 17;  @rdz18_min: 14;
 
 // ---- Casing -----------------------------------------------
 
@@ -503,7 +532,8 @@ Map {
 // AEROWAYS
 // ================================================================== */
 
-#aeroway[zoom>9] {
+//**May want to add icons for airports**
+#aeroway[zoom>6] {
   [TYPE='runway'] {
     line-width: 3;
   line-color:@aeroway;
@@ -532,8 +562,13 @@ Map {
 /* PLACE NAMES
 /* ================================================================== */
 
-
+#place [zoom>10] {
+    text-name:'[NAME]';
+    text-placement: point;
+    text-face-name:@sans_lt;
+   } 
 /*
+
 #place::country[type='country'][zoom>3][zoom<9] {
   text-name:'[name]';
   text-face-name:@sans_bold;

@@ -56,123 +56,22 @@
       "name": "brazilland2"
     },
     {
-      "geometry": "linestring",
-      "extent": [
-        -72.78267374620049,
-        -33.14605554922747,
-        -32.41482964291493,
-        4.997068424998671
-      ],
-      "id": "aeroway",
-      "class": "",
-      "Datasource": {
-        "file": "layers/aeroway/aeroway.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "aeroway",
-      "status": "off"
-    },
-    {
       "geometry": "polygon",
       "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
+        -72.9387298858415,
+        -33.751395465564535,
+        -29.345609530917752,
+        4.524040356469565
       ],
-      "id": "landuse",
+      "id": "water",
       "class": "",
       "Datasource": {
-        "file": "layers/landuse/landuse.shp"
+        "file": "layers/water/water.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landuse",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landusehigh",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landusehigh/landuse_high.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landusehigh",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landuselow",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landuselow/landuse_low.shp",
-        "id": "landuselow",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landuselow",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landusemed",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landusemed/landuse_med.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landusemed",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99094373595261,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "adminpoly",
-      "class": "",
-      "Datasource": {
-        "file": "layers/adminpoly/admin_poly.shp",
-        "id": "adminpoly",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "adminpoly",
+      "name": "water",
       "status": "off"
     },
     {
@@ -214,25 +113,6 @@
       "status": "off"
     },
     {
-      "geometry": "polygon",
-      "extent": [
-        -72.9387298858415,
-        -33.751395465564535,
-        -29.345609530917752,
-        4.524040356469565
-      ],
-      "id": "water",
-      "class": "",
-      "Datasource": {
-        "file": "layers/water/water.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "water",
-      "status": "off"
-    },
-    {
       "geometry": "linestring",
       "extent": [
         -72.1301536934912,
@@ -271,6 +151,134 @@
       "status": "off"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        -72.78267374620049,
+        -33.14605554922747,
+        -32.41482964291493,
+        4.997068424998671
+      ],
+      "id": "aeroway",
+      "class": "",
+      "Datasource": {
+        "file": "layers/aeroway/aeroway.shp",
+        "id": "aeroway",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "aeroway",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landuse",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landuse/landuse.shp",
+        "id": "landuse",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landuse"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landusehigh",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusehigh/landuse_high.shp",
+        "id": "landusehigh",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusehigh"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landuselow",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landuselow/landuse_low.shp",
+        "id": "landuselow",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landuselow"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landusemed",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusemed/landuse_med.shp",
+        "id": "landusemed",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusemed"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99094373595261,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "adminpoly",
+      "class": "",
+      "Datasource": {
+        "file": "layers/adminpoly/admin_poly.shp",
+        "id": "adminpoly",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "adminpoly",
+      "status": "off"
+    },
+    {
       "geometry": "polygon",
       "extent": [
         -72.77465475515373,
@@ -281,13 +289,15 @@
       "id": "buildings",
       "class": "",
       "Datasource": {
-        "file": "layers/buildings/buildings.shp"
+        "file": "layers/buildings/buildings.shp",
+        "id": "buildings",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "buildings",
-      "status": "off"
+      "name": "buildings"
     },
     {
       "geometry": "linestring",
@@ -308,7 +318,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "adminline"
+      "name": "adminline",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -321,31 +332,15 @@
       "id": "roadshigh",
       "class": "",
       "Datasource": {
-        "file": "layers/roadshigh/roads_high.shp"
+        "file": "layers/roadshigh/roads_high.shp",
+        "id": "roadshigh",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
       "name": "roadshigh",
-      "status": "off"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -68.93256342907804,
-        -33.88110072393982,
-        -34.79999353567003,
-        4.596762111391004
-      ],
-      "id": "roadslow",
-      "class": "",
-      "Datasource": {
-        "file": "layers/roadslow/roads_low.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "roadslow",
       "status": "off"
     },
     {
@@ -359,12 +354,37 @@
       "id": "roadsmed",
       "class": "",
       "Datasource": {
-        "file": "layers/roadsmed/roads_med.shp"
+        "file": "layers/roadsmed/roads_med.shp",
+        "id": "roadsmed",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
       "name": "roadsmed",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -68.93256342907804,
+        -33.88110072393982,
+        -34.79999353567003,
+        4.596762111391004
+      ],
+      "id": "roadslow",
+      "class": "",
+      "Datasource": {
+        "file": "layers/roadslow/roads_low.shp",
+        "id": "roadslow",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "roadslow",
       "status": "off"
     },
     {
@@ -378,13 +398,15 @@
       "id": "place",
       "class": "",
       "Datasource": {
-        "file": "layers/place/place.shp"
+        "file": "layers/place/place.shp",
+        "id": "place",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "place",
-      "status": "off"
+      "name": "place"
     }
   ],
   "scale": 1,
