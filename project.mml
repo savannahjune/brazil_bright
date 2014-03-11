@@ -30,7 +30,7 @@
       "id": "braziloutline",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/brazil_outline.shp"
+        "file": "layers/braziloutline/brazil_outline.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -48,7 +48,7 @@
       "id": "brazilland2",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/brazil_land2.shp"
+        "file": "layers/brazilland2/brazil_land2.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -66,12 +66,13 @@
       "id": "aeroway",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/aeroway.shp"
+        "file": "layers/aeroway/aeroway.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "aeroway"
+      "name": "aeroway",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -84,12 +85,13 @@
       "id": "landuse",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/landuse.shp"
+        "file": "layers/landuse/landuse.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landuse"
+      "name": "landuse",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -102,12 +104,13 @@
       "id": "landusehigh",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/landuse_high.shp"
+        "file": "layers/landusehigh/landuse_high.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landusehigh"
+      "name": "landusehigh",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -120,15 +123,16 @@
       "id": "landuselow",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/landuse_low.shp",
+        "file": "layers/landuselow/landuse_low.shp",
         "id": "landuselow",
-        "project": "brazil-shape",
+        "project": "brazil_bright",
         "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landuselow"
+      "name": "landuselow",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -141,12 +145,13 @@
       "id": "landusemed",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/landuse_med.shp"
+        "file": "layers/landusemed/landuse_med.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landusemed"
+      "name": "landusemed",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -159,30 +164,16 @@
       "id": "adminpoly",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/admin_poly.shp"
+        "file": "layers/adminpoly/admin_poly.shp",
+        "id": "adminpoly",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "adminpoly"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -72.9387298858415,
-        -33.751395465564535,
-        -29.345609530917752,
-        4.524040356469565
-      ],
-      "id": "water",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/water.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "water"
+      "name": "adminpoly",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -195,12 +186,13 @@
       "id": "waterlow",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/water_low.shp"
+        "file": "layers/waterlow/water_low.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterlow"
+      "name": "waterlow",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -213,12 +205,32 @@
       "id": "watermed",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/water_med.shp"
+        "file": "layers/watermed/water_med.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "watermed"
+      "name": "watermed",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.9387298858415,
+        -33.751395465564535,
+        -29.345609530917752,
+        4.524040356469565
+      ],
+      "id": "water",
+      "class": "",
+      "Datasource": {
+        "file": "layers/water/water.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "water",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -231,12 +243,13 @@
       "id": "waterwayhigh",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/waterway_high.shp"
+        "file": "layers/waterwayhigh/waterway_high.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwayhigh"
+      "name": "waterwayhigh",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -249,12 +262,13 @@
       "id": "waterwaylow",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/waterway_low.shp"
+        "file": "layers/waterwaylow/waterway_low.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwaylow"
+      "name": "waterwaylow",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -267,12 +281,13 @@
       "id": "buildings",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/buildings.shp"
+        "file": "layers/buildings/buildings.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "buildings"
+      "name": "buildings",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -285,9 +300,9 @@
       "id": "adminline",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/admin_line.shp",
+        "file": "layers/adminline/admin_line.shp",
         "id": "adminline",
-        "project": "brazil-shape",
+        "project": "brazil_bright",
         "srs": ""
       },
       "srs-name": "autodetect",
@@ -306,12 +321,13 @@
       "id": "roadshigh",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/roads_high.shp"
+        "file": "layers/roadshigh/roads_high.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadshigh"
+      "name": "roadshigh",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -324,12 +340,13 @@
       "id": "roadslow",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/roads_low.shp"
+        "file": "layers/roadslow/roads_low.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadslow"
+      "name": "roadslow",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -342,12 +359,13 @@
       "id": "roadsmed",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/roads_med.shp"
+        "file": "layers/roadsmed/roads_med.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadsmed"
+      "name": "roadsmed",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -360,12 +378,13 @@
       "id": "place",
       "class": "",
       "Datasource": {
-        "file": "/Users/sjg/iPhone/brazil/Savannah/brazil_data/place.shp"
+        "file": "layers/place/place.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "place"
+      "name": "place",
+      "status": "off"
     }
   ],
   "scale": 1,

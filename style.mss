@@ -326,7 +326,12 @@ Map {
 // ADMINISTRATIVE BOUNDARIES
 // ==================================================================
 
-#admin_line[ADMIN_LEVE="2"][zoom<4] {
+#adminpoly [zoom>12] {
+  line-color: @admin_2;
+  line-width:2;
+}
+
+#admin_line[ADMIN_LEVE="2"][zoom<=4] {
   line-color:@admin_2;
   line-width:2;
 }
