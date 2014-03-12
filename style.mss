@@ -3,7 +3,7 @@
 /* ****************************************************************** */
 
 Map {
-  background-color: #b8dee6;
+  background-color: @water;
 }
 
 /* ================================================================== */
@@ -219,7 +219,7 @@ Map {
 {
   [zoom>=10][zoom<12][AREA > 1000000]
   {
-    [TYPE='cemetery']      { polygon-fill: @cemetery; }
+    [TYPE='cemetery']      { polygon-fill: @cemetery; marker-file: url(cemetery-12.svg); }
     [TYPE='college']       { polygon-fill: @school; }
     [TYPE='commercial']    { polygon-fill: @industrial; }
     [TYPE='common']        { polygon-fill: @park; }
@@ -367,98 +367,6 @@ Map {
 
 
 // ==================================================================
-// ADMINISTRATIVE BOUNDARIES
-// ==================================================================
-
-#adminpoly [zoom > 10] {
-  text-name: '[NAME]';
-  text-face-name: @sans;}
-  [zoom > 12] {
-  line-color: @admin_2;
-  line-width:1;
-  }
-
-#admin_line[ADMIN_LEVE="2"][zoom<=4] {
-  line-color:@admin_2;
-  line-width:1;
-}
-#place[TYPE="country"][zoom<4]
-{
-  text-name:'[NAME]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  text-size:24;
-  text-wrap-width: 40;
-}
-
-//stopped here
-
-#adminline[ADMIN_LEVE="3"][zoom>=4][zoom<6] {
-  line-color:@admin_2;
-  line-width:1;
-} 
-#place[TYPE="state"][zoom>=4][zoom<7]
-{
-  text-name:'[NAME]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  text-size:12;
-  text-wrap-width: 40;
-}
-
-#admin_line[ADMIN_LEVE="4"][zoom>=6][zoom<8] {
-  line-color:@admin_2;
-  line-width:2;
-} 
-#place[TYPE="city"][zoom>=7]
-{
-  text-name:'[NAME]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  text-size:12;
-  text-wrap-width: 40;
-}
-
-#admin_line[ADMIN_LEVE="5"][zoom>=8][zoom<11] {
-  line-color:@admin_2;
-  line-width:2;
-} 
-#place[TYPE="town"][zoom>=10]
-{
-  text-name:'[NAME]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  text-size:12;
-  text-wrap-width: 40;
-}
-
-#place[TYPE="village"][zoom>=11]
-{
-  text-name:'[NAME]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  text-size:12;
-  text-wrap-width: 40;
-}
-
-
-
-// ==================================================================
 //   ROAD & RAIL LINES
 // ==================================================================
 
@@ -571,17 +479,19 @@ Map {
 
 //**May want to add icons for airports**
 #aeroway[zoom>6] {
-  [TYPE='runway'] {
+    [TYPE='runway'] { 
     line-width: 3;
-  line-color:@aeroway;
-  }
-  
-  [zoom>12][TYPE='taxiway'] {
+  	line-color:@aeroway;
+    [zoom > 9] {
+    marker-file: url(airport-12.svg);
+      }
+    }
+    [zoom>12][TYPE='taxiway'] {
     line-width: 2;
   line-color:@aeroway;
   }
 }
-
+//Stopped here
 /* LABELS.MSS CONTENTS:
  * - place names
  * - area labels
@@ -606,17 +516,6 @@ Map {
    } 
 /*
 
-#place::country[type='country'][zoom>3][zoom<9] {
-  text-name:'[name]';
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  [zoom=3] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
   [zoom=4] {
     text-size:11 + @text_adjust;
     text-wrap-width: 50;
@@ -636,41 +535,6 @@ Map {
     text-line-spacing: 2;
   }
   [zoom=7] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }
-}
-
-#place::state[type='state'][zoom>=5][zoom<=10] {
-  text-name:'[name]';
-  text-face-name:@sans_bold_italic;
-  text-placement:point;
-  text-fill:@state_text;
-  text-halo-fill: @state_halo;
-  text-halo-radius: 1;
-  [zoom=6] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
-  [zoom=7] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>8] {
-    text-halo-radius: 2;
-  }
-  [zoom=8] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=9] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=10] {
     text-size:14 + @text_adjust;
     text-character-spacing: 2;
   }
@@ -846,3 +710,112 @@ Map {
     text-line-spacing: 4;
   }
 }
+
+// ==================================================================
+// ADMINISTRATIVE BOUNDARIES & LABELS
+// ==================================================================
+
+#adminpoly [zoom > 10] {
+  text-name: '[NAME]';
+  text-face-name: @sans;}
+  [zoom > 12] {
+  line-color: @admin_2;
+  line-width:1;
+  }
+
+//National Border
+
+#adminline[ADMIN_LEVE="2"][zoom>=4] {
+  line-color:@admin_2;
+  line-width:0.5;
+  line-join: round;
+}
+
+//Country Label
+
+#place[TYPE="country"][zoom<=4]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@country_text;
+  text-halo-fill: @country_halo;
+  text-halo-radius: 1;
+  text-size:24;
+  text-wrap-width: 40;
+}
+
+//Regions
+
+#adminline[ADMIN_LEVE="3"][zoom>=5][zoom<6] {
+  line-color:@admin_2;
+  line-width:0.5;
+  line-join: round;
+} 
+
+//States
+
+#adminline[ADMIN_LEVE="4"][zoom>=5][zoom<7] {
+  line-color:@admin_2;
+  line-width:0.5;
+  line-join: round;
+} 
+
+#place[TYPE="state"][zoom>=5][zoom<7]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans;
+  text-placement:point;
+  text-fill:@state_text;
+  text-halo-fill: @state_halo;
+  text-halo-radius: 1;
+  text-size:12;
+  text-wrap-width: 40;
+}
+
+
+//#admin_line[ADMIN_LEVE="5"][zoom>=8][zoom<11] {
+//  line-color:@admin_2;
+//  line-width:2;
+//}
+
+//admin level 4 is meso regions, 5 is metropolitan areas, 6 is micro-regions
+//7 is municipalities, 8 is districts, 9 is suburbs and neighborhoods
+//info not needed for current map purpose
+
+#place[TYPE="city"][zoom>=7]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@city_text;
+  text-halo-fill: @city_halo;
+  text-halo-radius: 1;
+  text-size:12;
+  text-wrap-width: 40;
+}
+
+#place[TYPE="town"][zoom>=10]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@town_text;
+  text-halo-fill: @town_halo;
+  text-halo-radius: 1;
+  text-size:12;
+  text-wrap-width: 40;
+}
+
+#place[TYPE="village"][zoom>=11]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@town_text;
+  text-halo-fill: @town_halo;
+  text-halo-radius: 1;
+  text-size:12;
+  text-wrap-width: 40;
+}
+

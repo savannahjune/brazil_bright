@@ -58,6 +58,91 @@
     {
       "geometry": "polygon",
       "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landusehigh",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusehigh/landuse_high.shp",
+        "id": "landusehigh",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusehigh",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landuselow",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landuselow/landuse_low.shp",
+        "id": "landuselow",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landuselow"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landusemed",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusemed/landuse_med.shp",
+        "id": "landusemed",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusemed"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "landuse",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landuse/landuse.shp",
+        "id": "landuse",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landuse"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         -73.99094373595261,
         -33.86890548821901,
         -28.63411624761587,
@@ -113,8 +198,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "water",
-      "status": "off"
+      "name": "water"
     },
     {
       "geometry": "polygon",
@@ -132,8 +216,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterlow",
-      "status": "off"
+      "name": "waterlow"
     },
     {
       "geometry": "polygon",
@@ -154,8 +237,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "watermed",
-      "status": "off"
+      "name": "watermed"
     },
     {
       "geometry": "linestring",
@@ -176,8 +258,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwayhigh",
-      "status": "off"
+      "name": "waterwayhigh"
     },
     {
       "geometry": "linestring",
@@ -195,8 +276,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwaylow",
-      "status": "off"
+      "name": "waterwaylow"
     },
     {
       "geometry": "linestring",
@@ -217,96 +297,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "aeroway",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landuse",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landuse/landuse.shp",
-        "id": "landuse",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landuse",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landusehigh",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landusehigh/landuse_high.shp",
-        "id": "landusehigh",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landusehigh",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landuselow",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landuselow/landuse_low.shp",
-        "id": "landuselow",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landuselow",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "landusemed",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landusemed/landuse_med.shp",
-        "id": "landusemed",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landusemed",
-      "status": "off"
+      "name": "aeroway"
     },
     {
       "geometry": "polygon",
@@ -327,8 +318,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "buildings",
-      "status": "off"
+      "name": "buildings"
     },
     {
       "geometry": "linestring",
@@ -371,8 +361,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadsmed",
-      "status": "off"
+      "name": "roadsmed"
     },
     {
       "geometry": "linestring",
@@ -393,8 +382,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadslow",
-      "status": "off"
+      "name": "roadslow"
     },
     {
       "geometry": "point",
@@ -415,8 +403,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "place",
-      "status": "off"
+      "name": "place"
     }
   ],
   "scale": 1,
