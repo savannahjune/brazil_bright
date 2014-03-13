@@ -131,8 +131,13 @@ Map {
 
 /* ****************************************************************** */
 
-#braziloutline [zoom < 9] {
-  polygon-fill: white
+#braziloutline [zoom < 10] {
+  polygon-fill: white;
+    ::outline {
+    line-color: darken(@water,25%);
+    line-width: 0.2;
+    line-join: round;
+    }
 }
 
 #brazilland2 [zoom >= 4] {
@@ -287,7 +292,32 @@ Map {
     [zoom>=14][AREA<=30000]
   {
 	  polygon-fill:@building;
+      ::outline {
+      line-color: darken(@building,65%);
+      line-width: 0.3;
+      line-join: round;
+    }
   }
+}
+
+//building icons
+#buildings {
+    [zoom>=12][AREA>30000],
+    [zoom>=14][AREA<=30000] 
+    {
+    [TYPE='church'], [TYPE='chapel'] {
+    marker-file: url(religious-christian-12.svg); 
+    }
+    //marker-fill:orange;
+    [TYPE='university'] {
+    marker-file: url(college-12.svg); 
+    }
+    //marker-fill:orange;
+    [TYPE='school'] {
+    marker-file: url(school-12.svg); 
+    }
+    //marker-fill:orange;
+   }
 }
 
 //consider adding icons for church/chapel, university and school
@@ -331,7 +361,7 @@ Map {
     polygon-fill: @water;
     ::outline {
     line-color: darken(@water,25%);
-    line-width: 1;
+    line-width: 0.5;
     line-join: round;
       }
     }
@@ -340,7 +370,7 @@ Map {
     polygon-fill: @water;
     ::outline {
     line-color: darken(@water,25%);
-    line-width: 1.5;
+    line-width: 1.0;
     line-join: round;
       }
     }
@@ -426,16 +456,10 @@ Map {
 
 #roadshigh[zoom>10]
 {
-  [RAILWAY="rail"], {
-    	line-color: @rail_line; line-width: 1;
-    	[zoom > 12] {
-    	  ::line, ::hatch { line-color: @rail_line; }
-  		  ::line { line-width:1;}
-  		  ::hatch {
-    		line-width: 4;
-    		line-dasharray: 1, 24}
-		} 
-  	 }
+  [RAILWAY="rail"] {
+    	line-color: @rail_line; 
+    	line-width: 1; 
+    }
   }
 
 #roadshigh[zoom>12]
@@ -446,14 +470,7 @@ Map {
     [RAILWAY="narrow_guage"],
     [RAILWAY="light_rail"]
     [zoom > 12] {
-    	  ::line, ::hatch { line-color: @rail_line; }
-  		  ::line { line-width:1;}
-  		  ::hatch {
-    		line-width: 4;
-    		line-dasharray: 1, 24}
-    }
-    
-    	line-color: @rail_line; line-width: 2;
+    	line-color: @rail_line; line-width: 2;}
     }
 
 
@@ -513,203 +530,9 @@ Map {
     text-name:'[NAME]';
     text-placement: point;
     text-face-name:@sans_lt;
+  	text-halo-fill: fadeout(white, 30%);
+  	text-halo-radius: 2;
    } 
-/*
-
-  [zoom=4] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>4] {
-    text-halo-radius: 2;
-  }
-  [zoom=5] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=6] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=7] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }
-}
-*/
-
-/* ---- Cities ------------------------------------------------------ */
-
-#place::city[TYPE='city'][zoom>=8][zoom<=15] {
-  text-name:'[NAME]';
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@city_text;
-  text-halo-fill:@city_halo;
-  text-halo-radius:2;
-  [zoom<=8] {
-    text-size: 10;
-    text-halo-radius:1;
-  }
-  [zoom=9] {
-    text-size:10;
-    text-wrap-width: 60;
-  }
-  [zoom=10] {
-    text-size:11;
-    text-wrap-width: 70;
-  }
-  [zoom=11] {
-    text-size:12;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-  }
-  [zoom=12] {
-    text-size:13;
-    text-character-spacing: 1;
-    text-wrap-width: 100;
-  }
-  [zoom=13] {
-    text-size:14;
-    text-character-spacing: 2;
-    text-wrap-width: 200;
-    text-transform: uppercase;
-  }
-  [zoom=14] {
-    text-size:15;
-    text-character-spacing: 4;
-    text-wrap-width: 300;
-    text-transform: uppercase;
-  }
-  [zoom=15] {
-    text-size:16;
-    text-character-spacing: 6;
-    text-wrap-width: 400;
-    text-transform: uppercase;
-  }
-}
-
-/* ---- Towns ------------------------------------------------------- */
-
-#place::town[TYPE='town'][zoom>=9][zoom<=17] {
-  text-name:'[NAME]';
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@town_text;
-  text-size:9;
-  text-halo-fill:@town_halo;
-  text-halo-radius:1;
-  text-wrap-width: 50;
-  [zoom>=10] {
-    text-halo-radius:2;
-    text-size: 10;
-  }
-  [zoom>=11]{ text-size:11; }
-  [zoom>=12]{
-    text-size:12;
-    text-line-spacing: 1;
-  }
-  [zoom>=13]{
-    text-transform: uppercase;
-    text-character-spacing: 1;
-    text-line-spacing: 2;
-  }
-  [zoom>=14]{
-    text-size:13;
-    text-character-spacing: 2;
-    text-line-spacing: 3;
-  }
-  [zoom>=15]{
-    text-size:14;
-    text-character-spacing: 3;
-    text-line-spacing: 4;
-  }
-  [zoom>=15]{
-    text-size:15;
-    text-character-spacing: 4;
-    text-line-spacing: 5;
-  }
-  [zoom>=17]{
-    text-size:16;
-    text-character-spacing: 5;
-    text-line-spacing: 6;
-  }
-}
-
-/* ---- Other small places ------------------------------------------ */
-
-#place::small[TYPE='village'][zoom>=13],
-#place::small[TYPE='suburb'][zoom>=13],
-#place::small[TYPE='hamlet'][zoom>=13],
-#place::small[TYPE='neighbourhood'][zoom>=13] {
-  text-name:'[NAME]';
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@other_text;
-  text-size:10;
-  text-halo-fill:@other_halo;
-  text-halo-radius:1;
-  text-wrap-width: 30;
-  [zoom>=14] {
-    text-size:11;
-    text-character-spacing: 1;
-    text-wrap-width: 40;
-    text-line-spacing: 1;
-  }
-  [zoom>=15] {
-    text-halo-radius: 2;
-    text-transform: uppercase;
-    text-character-spacing: 1;
-    text-wrap-width: 60; 
-    text-line-spacing: 1;
-  }
-  [zoom>=16] {
-    text-size:12;
-    text-character-spacing: 2;
-    text-wrap-width: 120;
-    text-line-spacing: 2;
-  } 
-  [zoom>=17] {
-    text-size:13; 
-    text-character-spacing: 3;
-    text-wrap-width: 160;
-    text-line-spacing: 4;
-  }
-  [zoom>=18] {
-    text-size:14;
-    text-character-spacing: 4;
-    text-line-spacing: 6;
-  }
-}
-
-#place::small[TYPE='locality'][zoom>=15] {
-  text-name:'[NAME]';
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@locality_text;
-  text-size:9;
-  text-halo-fill:@locality_halo;
-  text-halo-radius:1;
-  text-wrap-width: 30;
-  [zoom>=16] {
-    text-size:10;
-    text-wrap-width: 60;
-    text-line-spacing: 1;
-  }
-  [zoom>=17] {
-    text-size:11;
-    text-wrap-width: 120;
-    text-line-spacing: 2;
-  }
-  [zoom>=18] {
-    text-size:12;
-    text-character-spacing: 1;
-    text-line-spacing: 4;
-  }
-}
 
 // ==================================================================
 // ADMINISTRATIVE BOUNDARIES & LABELS
@@ -718,23 +541,21 @@ Map {
 #adminpoly [zoom > 10] {
   text-name: '[NAME]';
   text-face-name: @sans;}
-  [zoom > 12] {
-  line-color: @admin_2;
-  line-width:1;
-  }
 
 //National Border
 
-#adminline[ADMIN_LEVE="2"][zoom>=4] {
+#adminline [zoom>=4] {
+  [ADMIN_LEVE="2"] {
   line-color:@admin_2;
   line-width:0.5;
   line-join: round;
+    }
 }
 
 //Country Label
 
-#place[TYPE="country"][zoom<=4]
-{
+#place [zoom<=4]{
+  [TYPE="country"]{
   text-name:'[NAME]';
   text-face-name:@sans_bold;
   text-placement:point;
@@ -743,22 +564,27 @@ Map {
   text-halo-radius: 1;
   text-size:24;
   text-wrap-width: 40;
+	}
 }
 
 //Regions
 
-#adminline[ADMIN_LEVE="3"][zoom>=5][zoom<6] {
+#adminline [zoom>=5][zoom<6] {
+  [ADMIN_LEVE="3"] {
   line-color:@admin_2;
   line-width:0.5;
   line-join: round;
+   } 
 } 
 
 //States
 
-#adminline[ADMIN_LEVE="4"][zoom>=5][zoom<7] {
+#adminline [zoom>=5][zoom<7] {
+  [ADMIN_LEVE="4"] {
   line-color:@admin_2;
   line-width:0.5;
   line-join: round;
+    }
 } 
 
 #place[TYPE="state"][zoom>=5][zoom<7]
@@ -783,16 +609,18 @@ Map {
 //7 is municipalities, 8 is districts, 9 is suburbs and neighborhoods
 //info not needed for current map purpose
 
-#place[TYPE="city"][zoom>=7]
+#place [zoom>=7]
 {
+  [TYPE="city"] {
   text-name:'[NAME]';
   text-face-name:@sans_bold;
   text-placement:point;
   text-fill:@city_text;
   text-halo-fill: @city_halo;
-  text-halo-radius: 1;
+  text-halo-radius: 2;
   text-size:12;
   text-wrap-width: 40;
+	}
 }
 
 #place[TYPE="town"][zoom>=10]
@@ -802,7 +630,7 @@ Map {
   text-placement:point;
   text-fill:@town_text;
   text-halo-fill: @town_halo;
-  text-halo-radius: 1;
+  text-halo-radius: 2;
   text-size:12;
   text-wrap-width: 40;
 }
@@ -814,7 +642,7 @@ Map {
   text-placement:point;
   text-fill:@town_text;
   text-halo-fill: @town_halo;
-  text-halo-radius: 1;
+  text-halo-radius: 2;
   text-size:12;
   text-wrap-width: 40;
 }

@@ -74,8 +74,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "landusehigh",
-      "status": "off"
+      "name": "landusehigh"
     },
     {
       "geometry": "polygon",
@@ -198,7 +197,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "water"
+      "name": "water",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -216,7 +216,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterlow"
+      "name": "waterlow",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -237,7 +238,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "watermed"
+      "name": "watermed",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -258,7 +260,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwayhigh"
+      "name": "waterwayhigh",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -276,7 +279,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwaylow"
+      "name": "waterwaylow",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -297,7 +301,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "aeroway"
+      "name": "aeroway",
+      "status": "off"
     },
     {
       "geometry": "polygon",
@@ -361,7 +366,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadsmed"
+      "name": "roadsmed",
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -382,7 +388,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadslow"
+      "name": "roadslow",
+      "status": "off"
     },
     {
       "geometry": "point",
