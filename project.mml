@@ -84,27 +84,6 @@
         -28.63411624761587,
         5.283457316811141
       ],
-      "id": "landuselow",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landuselow/landuse_low.shp",
-        "id": "landuselow",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landuselow"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99120667283628,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
       "id": "landusemed",
       "class": "",
       "Datasource": {
@@ -126,6 +105,27 @@
         -28.63411624761587,
         5.283457316811141
       ],
+      "id": "landuselow",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landuselow/landuse_low.shp",
+        "id": "landuselow",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landuselow"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99120667283628,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
       "id": "landuse",
       "class": "",
       "Datasource": {
@@ -138,27 +138,6 @@
       "srs": "",
       "advanced": {},
       "name": "landuse"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -73.99094373595261,
-        -33.86890548821901,
-        -28.63411624761587,
-        5.283457316811141
-      ],
-      "id": "adminpoly",
-      "class": "",
-      "Datasource": {
-        "file": "layers/adminpoly/admin_poly.shp",
-        "id": "adminpoly",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "adminpoly"
     },
     {
       "geometry": "linestring",
@@ -197,8 +176,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "water",
-      "status": "off"
+      "name": "water"
     },
     {
       "geometry": "polygon",
@@ -216,8 +194,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterlow",
-      "status": "off"
+      "name": "waterlow"
     },
     {
       "geometry": "polygon",
@@ -238,8 +215,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "watermed",
-      "status": "off"
+      "name": "watermed"
     },
     {
       "geometry": "linestring",
@@ -260,8 +236,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwayhigh",
-      "status": "off"
+      "name": "waterwayhigh"
     },
     {
       "geometry": "linestring",
@@ -279,8 +254,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwaylow",
-      "status": "off"
+      "name": "waterwaylow"
     },
     {
       "geometry": "linestring",
@@ -301,8 +275,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "aeroway",
-      "status": "off"
+      "name": "aeroway"
     },
     {
       "geometry": "polygon",
@@ -344,8 +317,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadshigh",
-      "status": "off"
+      "name": "roadshigh"
     },
     {
       "geometry": "linestring",
@@ -366,8 +338,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadsmed",
-      "status": "off"
+      "name": "roadsmed"
     },
     {
       "geometry": "linestring",
@@ -388,8 +359,28 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadslow",
-      "status": "off"
+      "name": "roadslow"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.99094373595261,
+        -33.86890548821901,
+        -28.63411624761587,
+        5.283457316811141
+      ],
+      "id": "adminpoly",
+      "class": "",
+      "Datasource": {
+        "file": "layers/adminpoly/admin_poly.shp",
+        "id": "adminpoly",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "adminpoly"
     },
     {
       "geometry": "point",

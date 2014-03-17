@@ -294,7 +294,7 @@ Map {
 	  polygon-fill:@building;
       ::outline {
       line-color: darken(@building,65%);
-      line-width: 0.3;
+      line-width: 0.4;
       line-join: round;
     }
   }
@@ -307,22 +307,29 @@ Map {
     {
     [TYPE='church'], [TYPE='chapel'] {
     marker-file: url(religious-christian-12.svg); 
+      [zoom>=16] {marker-file: url(religious-christian-12.svg);
+        }
     }
-    //marker-fill:orange;
     [TYPE='university'] {
-    marker-file: url(college-12.svg); 
+    marker-file: url(college-12.svg);
+    [zoom>=16] {marker-file: url(college-24.svg);
+        }
     }
-    //marker-fill:orange;
     [TYPE='school'] {
     marker-file: url(school-12.svg); 
+    [zoom>=16] {marker-file: url(school-24.svg);
+        }
     }
-    //marker-fill:orange;
-   }
+    [TYPE='public'] {
+    marker-file: url(town-hall-12.svg);
+    [zoom>=16] {marker-file: url(town-hall-24.svg);
+        }
+    }  
+  }  
 }
 
-//consider adding icons for church/chapel, university and school
-//types of buildings ‘yes’, hangar, church, apartments, public,
-//house, chapel, university, school, 
+//consider adding icons for other types of buildings ‘yes’, 
+//hangar, apartments, house, 
 
 // ==================================================================
 // WATER AREAS
@@ -538,10 +545,6 @@ Map {
 // ADMINISTRATIVE BOUNDARIES & LABELS
 // ==================================================================
 
-#adminpoly [zoom > 10] {
-  text-name: '[NAME]';
-  text-face-name: @sans;}
-
 //National Border
 
 #adminline [zoom>=4] {
@@ -608,6 +611,7 @@ Map {
 //admin level 4 is meso regions, 5 is metropolitan areas, 6 is micro-regions
 //7 is municipalities, 8 is districts, 9 is suburbs and neighborhoods
 //info not needed for current map purpose
+//place info includes names,population,admin-leve
 
 #place [zoom>=7]
 {
@@ -623,6 +627,18 @@ Map {
 	}
 }
 
+/* redundant with city names, appears twice #place[TYPE="suburb"][zoom>=9]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@city_text;
+  text-halo-fill: @city_text;
+  text-halo-radius: 2;
+  text-size:12;
+  text-wrap-width: 40;
+}
+*/
 #place[TYPE="town"][zoom>=10]
 {
   text-name:'[NAME]';
@@ -635,7 +651,7 @@ Map {
   text-wrap-width: 40;
 }
 
-#place[TYPE="village"][zoom>=11]
+#place[TYPE="village"][zoom>=10]
 {
   text-name:'[NAME]';
   text-face-name:@sans_bold;
@@ -647,3 +663,29 @@ Map {
   text-wrap-width: 40;
 }
 
+#place[TYPE="hamlet"][zoom>=12]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@town_text;
+  text-halo-fill: @town_halo;
+  text-halo-radius: 2;
+  text-size:12;
+  text-wrap-width: 40;
+}
+
+#adminpoly [zoom > 10] {
+  polygon-fill:white;
+  polygon-opacity: 0;
+  text-name: '[NAME]';
+  text-face-name:@sans_bold;
+  text-placement:point;
+  text-fill:@town_text;
+  text-halo-fill: @town_halo;
+  text-halo-radius: 2;
+  text-size:12;
+  text-wrap-width: 40;
+}
+//adminpoly includes 8 is districts, 9 is suburbs, 10, 4 is meso regions, 7 is municipalities
+//admin level , 5 is metropolitan areas, 6 is micro-regions
