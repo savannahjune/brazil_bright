@@ -183,6 +183,7 @@ Map {
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
         polygon-opacity: 0.3;
+        marker-file: url(park2-12.svg);
       }
     [TYPE='water']   	   { polygon-fill: @water; }
   }
@@ -279,6 +280,7 @@ Map {
     [TYPE='nature_reserve'] 
       { polygon-fill: darken(@wooded,25%);
         polygon-opacity: 0.3;
+        //marker-file: url(park2-12.svg);
       }
     [TYPE='water']   	   { polygon-fill: @water; }
   }
@@ -337,7 +339,7 @@ Map {
 
 #waterlow
 {
-  [zoom>=6][zoom<8][AREA > 1000000000]
+  [zoom>=5][zoom<6][AREA > 1000000000]
     {
     polygon-fill: @water;
     ::outline {
@@ -350,7 +352,7 @@ Map {
 
 #watermed
 {
-  [zoom>=8][zoom<10][AREA > 10000000]
+  [zoom>=6][zoom<9][AREA > 10000000]
     {
     polygon-fill: @water;
     ::outline {
@@ -363,7 +365,7 @@ Map {
 
 #water
 {
-  [zoom>=10]
+  [zoom>=9]
     {
     polygon-fill: @water;
     ::outline {
@@ -410,7 +412,7 @@ Map {
 // At lower zoomlevels, just show major automobile routes: motorways and trunks.
 
 
-#roadslow[zoom>=6] 
+#roadslow[zoom>=7] 
 {
   [TYPE='motorway'] { line-color: @motorway_line; line-width: 1.0 }
   [TYPE='trunk'] { line-color: @trunk_line; line-width: 1.0 }
@@ -590,7 +592,9 @@ Map {
     }
 } 
 
-#place[TYPE="state"][zoom>=5][zoom<7]
+//State names for zoom level 5
+
+#place[TYPE="state"][zoom>=5][zoom<6]
 {
   text-name:'[NAME]';
   text-face-name:@sans;
@@ -600,18 +604,42 @@ Map {
   text-halo-radius: 1;
   text-size:12;
   text-wrap-width: 40;
+  text-align:center;
+  [NAME="Rondônia"] {
+  text-dx:-0.6px;}
+  [NAME="Santa Catarina"] {
+  text-dy:-0.5px;}
+  [NAME="Goiás"] {
+  text-dy:18px;}
 }
 
+#place[TYPE="state"][zoom>=6][zoom<7]
+{
+  text-name:'[NAME]';
+  text-face-name:@sans;
+  text-placement:point;
+  text-fill:@state_text;
+  text-halo-fill: @state_halo;
+  text-halo-radius: 1;
+  text-size:15;
+  text-wrap-width: 40;
+  text-align:center;
+  [NAME="Amapá"] {
+  text-dy:10px;}
+  [NAME="Pará"] {
+  text-dy:18px;}
+}
 
-//#admin_line[ADMIN_LEVE="5"][zoom>=8][zoom<11] {
-//  line-color:@admin_2;
-//  line-width:2;
-//}
-
+/*metropolitan areas look crowded
+#adminline[ADMIN_LEVE="6"][zoom>=6][zoom<11] {
+  line-color:@admin_2;
+  line-width:6;
+}
 //admin level 4 is meso regions, 5 is metropolitan areas, 6 is micro-regions
 //7 is municipalities, 8 is districts, 9 is suburbs and neighborhoods
 //info not needed for current map purpose
 //place info includes names,population,admin-leve
+*/
 
 #place [zoom>=7]
 {
@@ -623,11 +651,103 @@ Map {
   text-halo-fill: @city_halo;
   text-halo-radius: 2;
   text-size:12;
-  text-wrap-width: 40;
-	}
+  }
+}
+  
+#place [zoom>=6] [zoom<11] [TYPE="city"] { 
+  ['NAME'="São Paulo"] {
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+  ['NAME'="Rio de Janeiro"] {
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+  ['NAME'="Salvador"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+   ['NAME'="Fortaleza"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+   ['NAME'="Belo Horizonte"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+   ['NAME'="Curitiba"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+   ['NAME'="Recife"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
+   ['NAME'="Porto Alegre"]{
+    marker-fill:#E65C5C;
+    marker-width:5px;
+  	marker-height:5px;
+    text-name:'[NAME]';
+    text-face-name:@sans_bold;
+    text-fill:@city_text;
+    text-halo-fill: @city_halo;
+    text-halo-radius: 3;
+    text-size:12;
+    text-dx:7px;}
 }
 
-/* redundant with city names, appears twice #place[TYPE="suburb"][zoom>=9]
+/* redundant with city names, appears twice 
+
+#place[TYPE="suburb"][zoom>=9]
 {
   text-name:'[NAME]';
   text-face-name:@sans_bold;
@@ -639,6 +759,7 @@ Map {
   text-wrap-width: 40;
 }
 */
+
 #place[TYPE="town"][zoom>=10]
 {
   text-name:'[NAME]';
@@ -675,6 +796,12 @@ Map {
   text-wrap-width: 40;
 }
 
+/* redudant with place names
+
+adminpoly includes the following admin levels:
+8 is districts, 9 is suburbs, 10, 4 is meso regions, 
+7 is municipalities, 5 is metropolitan areas, 6 is micro-regions
+
 #adminpoly [zoom > 10] {
   polygon-fill:white;
   polygon-opacity: 0;
@@ -687,5 +814,4 @@ Map {
   text-size:12;
   text-wrap-width: 40;
 }
-//adminpoly includes 8 is districts, 9 is suburbs, 10, 4 is meso regions, 7 is municipalities
-//admin level , 5 is metropolitan areas, 6 is micro-regions
+*/
