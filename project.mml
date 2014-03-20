@@ -259,6 +259,28 @@
     {
       "geometry": "linestring",
       "extent": [
+        -73.9830625,
+        -33.7673986,
+        -29.3073886,
+        5.9527567
+      ],
+      "id": "waterwaysnew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/waterwaysnew/waterways.shp",
+        "id": "waterwaysnew",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "waterwaysnew",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
         -72.78267374620049,
         -33.14605554922747,
         -32.41482964291493,
@@ -402,6 +424,156 @@
       "srs": "",
       "advanced": {},
       "name": "place"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -73.1225931,
+        -33.7541474,
+        -29.314610099999996,
+        4.6197686
+      ],
+      "id": "points",
+      "class": "",
+      "Datasource": {
+        "file": "layers/points/points.shp",
+        "id": "points",
+        "project": "brazil_bright",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "points"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.9389915,
+        -33.8099256,
+        -29.3180708,
+        4.5572526
+      ],
+      "id": "landusenew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusenew/landuse.shp",
+        "id": "landusenew",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusenew",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.9387301,
+        -33.7659914,
+        -29.3456097,
+        4.6034995
+      ],
+      "id": "natural",
+      "class": "",
+      "Datasource": {
+        "file": "layers/natural/natural.shp",
+        "id": "natural",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "natural",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -65.3712977,
+        -32.6880049,
+        -34.8322724,
+        3.8095153
+      ],
+      "id": "railways",
+      "class": "",
+      "Datasource": {
+        "file": "layers/railways/railways.shp",
+        "id": "railways",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "railways",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -73.840763,
+        -33.8811009,
+        -29.3100668,
+        5.7744494
+      ],
+      "id": "roadsnew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/roadsnew/roads.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "roadsnew",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.7746549,
+        -33.7479506,
+        -29.3166852,
+        4.6086297
+      ],
+      "id": "buildingsnew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/buildingsnew/buildings.shp",
+        "id": "buildingsnew",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "buildingsnew",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -73.73114592521966,
+        -33.76413470724887,
+        -29.307220745903134,
+        4.770073976381833
+      ],
+      "id": "placesnew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/place/place.shp",
+        "id": "placesnew",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "placesnew",
+      "status": "off"
     }
   ],
   "scale": 1,

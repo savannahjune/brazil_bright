@@ -309,7 +309,7 @@ Map {
     {
     [TYPE='church'], [TYPE='chapel'] {
     marker-file: url(religious-christian-12.svg); 
-      [zoom>=16] {marker-file: url(religious-christian-12.svg);
+    [zoom>=16] {marker-file: url(religious-christian-12.svg);
         }
     }
     [TYPE='university'] {
@@ -318,9 +318,7 @@ Map {
         }
     }
     [TYPE='school'] {
-    marker-file: url(school-12.svg); 
-    [zoom>=16] {marker-file: url(school-24.svg);
-        }
+    marker-file: url(school-18.svg); 
     }
     [TYPE='public'] {
     marker-file: url(town-hall-12.svg);
@@ -330,6 +328,31 @@ Map {
   }  
 }
 
+
+//pitch-18.svg, rail-18.svg
+//rail-above-24.svg, rail-light-18.svg, rail-metro-18.svg, religious-christian-18.svg
+//zoo-18.svg
+
+#points [zoom>=15] {
+  [type='hospital'] {
+  marker-file: url(hospital-12.svg);
+	}
+  [type='bus_stop'] {
+  marker-file: url(bus-12.svg);
+	}
+  [type='emergency_telephone'] {
+  marker-file: url(telephone-12.svg);
+	}
+  [type='fuel'] {
+  marker-file: url(fuel-12.svg);
+	}
+  [type='parking'] {
+  marker-file: url(parking-18.svg);
+	}
+  //[type='park'] {
+  //marker-file: url(park2-12.svg);
+  //	}
+}
 //consider adding icons for other types of buildings ‘yes’, 
 //hangar, apartments, house, 
 
@@ -352,7 +375,7 @@ Map {
 
 #watermed
 {
-  [zoom>=6][zoom<9][AREA > 10000000]
+  [zoom>=6][AREA > 10000000]
     {
     polygon-fill: @water;
     ::outline {
@@ -404,6 +427,17 @@ Map {
       }
 }
 
+#waterwaysnew [zoom>=8]{
+  line-color: @water;
+  line-width: 2.0;
+  text-name:'[name]';
+  text-placement: line;
+  text-face-name:@sans_lt;
+  text-halo-fill: fadeout(white, 30%);
+  text-halo-radius: 2;
+  text-dx: 10px;
+}
+
 
 // ==================================================================
 //   ROAD & RAIL LINES
@@ -412,8 +446,7 @@ Map {
 // At lower zoomlevels, just show major automobile routes: motorways and trunks.
 
 
-#roadslow[zoom>=7] 
-{
+#roadslow[zoom>=7] {
   [TYPE='motorway'] { line-color: @motorway_line; line-width: 1.0 }
   [TYPE='trunk'] { line-color: @trunk_line; line-width: 1.0 }
 }
@@ -815,3 +848,48 @@ adminpoly includes the following admin levels:
   text-wrap-width: 40;
 }
 */
+
+
+
+#landusenew {
+  line-color:#594;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#ae8;
+}
+
+
+#natural {
+  line-color:#594;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#ae8;
+}
+
+
+#railways {
+  line-width:1;
+  line-color:#168;
+}
+
+
+#roadsnew {
+  line-width:1;
+  line-color:#168;
+}
+
+
+#buildingsnew {
+  line-color:#594;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#ae8;
+}
+
+
+#placesnew {
+  marker-width:6;
+  marker-fill:#f45;
+  marker-line-color:#813;
+  marker-allow-overlap:true;
+}
