@@ -252,6 +252,23 @@ Map {
     [TYPE='water']   	   { polygon-fill: @water; }
   }
 }
+// military, retail not filled in 
+
+#landusenew {
+  [zoom>=12]
+  {
+    [type='cemetery']      { polygon-fill: @cemetery; }
+    [type='industrial']    { polygon-fill: @industrial; }
+    [type='conservation']  { polygon-fill: @wooded; }
+    [type='golf_course']   { polygon-fill: @sports; }
+    [type='hospital']      { polygon-fill: @hospital; }
+    [type='industrial']    { polygon-fill: @industrial; }
+    [type='park']          { polygon-fill: @park; }
+    [type='residential']   { polygon-fill: @residential; }
+    [type='pitch']         { polygon-fill: @sports; }
+    [type='reservoir']     { polygon-fill: @water; }
+  }
+}
 
 #landuse
 {
@@ -284,6 +301,13 @@ Map {
       }
     [TYPE='water']   	   { polygon-fill: @water; }
   }
+}
+
+#natural [zoom>=12]{
+    [type='forest']        { polygon-fill: @wooded; }
+    [type='park']          { polygon-fill: @park; }
+    [type='water']   	   { polygon-fill: @water; }
+    [type='riverbank'] 	   { polygon-fill: @water; }
 }
 
 // ---- BUILDINGS ----
@@ -430,12 +454,6 @@ Map {
 #waterwaysnew [zoom>=8]{
   line-color: @water;
   line-width: 2.0;
-  text-name:'[name]';
-  text-placement: line;
-  text-face-name:@sans_lt;
-  text-halo-fill: fadeout(white, 30%);
-  text-halo-radius: 2;
-  text-dx: 10px;
 }
 
 
@@ -686,8 +704,9 @@ Map {
   text-size:12;
   }
 }
-  
-#place [zoom>=6] [zoom<11] [TYPE="city"] { 
+
+
+#place [zoom>=6] [zoom < 11] [TYPE="city"] { 
   ['NAME'="São Paulo"] {
     marker-fill:#E65C5C;
     marker-width:5px;
@@ -849,47 +868,118 @@ adminpoly includes the following admin levels:
 }
 */
 
+// ==================================================================
+// MISC LABELS FLOAT ON TOP
+// ==================================================================
 
+#waterwaysnewnames [zoom>=8]{
+  text-name:'[name]';
+  text-placement: line;
+  text-face-name:@sans_lt;
+  text-halo-fill: fadeout(white, 30%);
+  text-halo-radius: 2;
+  text-min-distance: 9px;
+}
 
-#landusenew {
-  line-color:#594;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:#ae8;
+#naturalnames [zoom>=14]{
+    text-name:'[name]';
+    text-placement: point;
+	//marker-fill:black;
+    //marker-width:2px;
+  	//marker-height:2px;
+    [type='riverbank'] {
+      text-placement: line;
+   	}
+    text-face-name:@sans_lt;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+ }
+
+#railways [zoom>=12]{
+    text-name:'[name]';
+    text-placement: line;
+    text-face-name:@sans_lt;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+ }
+
+#roadsnew [zoom>=12]{
+    text-name:'[name]';
+    text-placement: line;
+    text-face-name:@sans_lt;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2; 
+  	text-min-distance: 5;
+ }
+
+#buildingsnew [zoom>=15] {
+  text-name:'[name]';
+  text-placement: point;
+  text-face-name:@sans_lt;
+  text-halo-fill: fadeout(white, 30%);
+  text-halo-radius: 2;
+  [type='church'], [type='chapel'] {
+    marker-file: url(religious-christian-12.svg); }
+  [type='places_of_worship'] {
+    marker-file: url(place-of-worship-12.svg); }
+  [type='school'] {
+    marker-file: url(school-12.svg); }
+  [type='railway_station'], [type='train_station'] {
+    marker-file: url(rail-12.svg); }
+  [type='cathedral'] {
+    marker-file: url(place-of-worship-12.svg); }
+  [type='police'] {
+    marker-file: url(police-12.svg); }
+  [type='college'], [type='university'] {
+    marker-file: url(college-12.svg); }
+  [type='toilets'] {
+    marker-file: url(toilets-12.svg); }
+  [type='museum'] {
+    marker-file: url(museum-12.svg); }
+  [type='fuel'] {
+    marker-file: url(fuel-12.svg); }
+  [type='ferry_terminal'] {
+    marker-file: url(ferry-12.svg); }
+  [type='nightclub'] {
+    marker-file: url(bar-12.svg); }
+  [type='library'] {
+    marker-file: url(library-12.svg); }
+  [type='parking'] {
+    marker-file: url(parking-12.svg); }
+  [type='hospital'] {
+    marker-file: url(hospital-12.svg); }
+  //[type='apartments'] {
+  //  marker-file: url(); }
+  [type='public_building'], [type='public'] {
+    marker-file: url(town-hall-12.svg); }
+  [type='restaurant'] {
+    marker-file: url(restaurant-12.svg); }
+  [type='bicycle_parking'] {
+    marker-file: url(bicycle-12.svg); }
+  [type='hotel'] {
+    marker-file: url(lodging-12.svg); }
+  [type='commercial'] {
+    marker-file: url(commercial-12.svg); }
+  //[type='transportation'] {
+  //  marker-file: url(); }
+  [type='fast_food'] {
+    marker-file: url(fast-food-12.svg); }
+  [type='theatre'] {
+    marker-file: url(theatre-12.svg); }
+  [type='marketplace'], [type='supermarket'] {
+    marker-file: url(grocery-12.svg); }
+  //[type='attraction'] {
+  // marker-file: url(); }
+  [type='bus_station'] {
+    marker-file: url(bus-12.svg); }
+  [type='arts_centre'], [type='studio'] {
+    marker-file: url(art-gallery-12.svg); }
+  //[type='hangar'] {
+  //  marker-file: url(); }
+  //[type='station'] {
+  //  marker-file: url(); }
+  [type='industrial'] {
+    marker-file: url(industrial-12.svg); }
 }
 
 
-#natural {
-  line-color:#594;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:#ae8;
-}
-
-
-#railways {
-  line-width:1;
-  line-color:#168;
-}
-
-
-#roadsnew {
-  line-width:1;
-  line-color:#168;
-}
-
-
-#buildingsnew {
-  line-color:#594;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:#ae8;
-}
-
-
-#placesnew {
-  marker-width:6;
-  marker-fill:#f45;
-  marker-line-color:#813;
-  marker-allow-overlap:true;
-}

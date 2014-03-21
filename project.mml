@@ -121,6 +121,27 @@
     {
       "geometry": "polygon",
       "extent": [
+        -72.9389915,
+        -33.8099256,
+        -29.3180708,
+        4.5572526
+      ],
+      "id": "landusenew",
+      "class": "",
+      "Datasource": {
+        "file": "layers/landusenew/landuse.shp",
+        "id": "landusenew",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landusenew"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         -73.99120667283628,
         -33.86890548821901,
         -28.63411624761587,
@@ -138,6 +159,27 @@
       "srs": "",
       "advanced": {},
       "name": "landuse"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.9387301,
+        -33.7659914,
+        -29.3456097,
+        4.6034995
+      ],
+      "id": "natural",
+      "class": "",
+      "Datasource": {
+        "file": "layers/natural/natural.shp",
+        "id": "natural",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "natural"
     },
     {
       "geometry": "linestring",
@@ -275,8 +317,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "waterwaysnew",
-      "status": "off"
+      "name": "waterwaysnew"
     },
     {
       "geometry": "linestring",
@@ -447,50 +488,6 @@
       "name": "points"
     },
     {
-      "geometry": "polygon",
-      "extent": [
-        -72.9389915,
-        -33.8099256,
-        -29.3180708,
-        4.5572526
-      ],
-      "id": "landusenew",
-      "class": "",
-      "Datasource": {
-        "file": "layers/landusenew/landuse.shp",
-        "id": "landusenew",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "landusenew",
-      "status": "off"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
-        -72.9387301,
-        -33.7659914,
-        -29.3456097,
-        4.6034995
-      ],
-      "id": "natural",
-      "class": "",
-      "Datasource": {
-        "file": "layers/natural/natural.shp",
-        "id": "natural",
-        "project": "brazil_bright",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "natural",
-      "status": "off"
-    },
-    {
       "geometry": "linestring",
       "extent": [
         -65.3712977,
@@ -509,8 +506,7 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "railways",
-      "status": "off"
+      "name": "railways"
     },
     {
       "geometry": "linestring",
@@ -523,13 +519,15 @@
       "id": "roadsnew",
       "class": "",
       "Datasource": {
-        "file": "layers/roadsnew/roads.shp"
+        "file": "layers/roadsnew/roads.shp",
+        "id": "roadsnew",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "roadsnew",
-      "status": "off"
+      "name": "roadsnew"
     },
     {
       "geometry": "polygon",
@@ -550,30 +548,43 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "buildingsnew",
-      "status": "off"
+      "name": "buildingsnew"
     },
     {
-      "geometry": "point",
+      "geometry": "polygon",
       "extent": [
-        -73.73114592521966,
-        -33.76413470724887,
-        -29.307220745903134,
-        4.770073976381833
+        -72.9387301,
+        -33.7659914,
+        -29.3456097,
+        4.6034995
       ],
-      "id": "placesnew",
+      "id": "naturalnames",
       "class": "",
       "Datasource": {
-        "file": "layers/place/place.shp",
-        "id": "placesnew",
-        "project": "brazil_bright",
-        "srs": ""
+        "file": "layers/naturalnames/natural.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "placesnew",
-      "status": "off"
+      "name": "naturalnames"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -73.9830625,
+        -33.7673986,
+        -29.3073886,
+        5.9527567
+      ],
+      "id": "waterwaysnewnames",
+      "class": "",
+      "Datasource": {
+        "file": "layers/waterwaysnewnames/waterways.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "waterwaysnewnames"
     }
   ],
   "scale": 1,
