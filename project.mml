@@ -561,7 +561,10 @@
       "id": "naturalnames",
       "class": "",
       "Datasource": {
-        "file": "layers/naturalnames/natural.shp"
+        "file": "layers/naturalnames/natural.shp",
+        "id": "naturalnames",
+        "project": "brazil_bright",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -585,6 +588,27 @@
       "srs": "",
       "advanced": {},
       "name": "waterwaysnewnames"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -72.78267374620049,
+        -33.14605554922747,
+        -32.41482964291493,
+        4.997068424998671
+      ],
+      "id": "aerowayicons",
+      "class": "",
+      "Datasource": {
+        "file": "layers/aerowayicons/aeroway.shp",
+        "id": "aerowayicons",
+        "project": "brazil_bright",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "aerowayicons"
     }
   ],
   "scale": 1,

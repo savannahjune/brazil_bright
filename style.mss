@@ -225,7 +225,9 @@ Map {
 {
   [zoom>=10][zoom<12][AREA > 1000000]
   {
-    [TYPE='cemetery']      { polygon-fill: @cemetery; marker-file: url(cemetery-12.svg); }
+    [TYPE='cemetery']      { polygon-fill: @cemetery; 
+      [zoom>=15] {marker-file: url(cemetery-12.svg); }
+    }
     [TYPE='college']       { polygon-fill: @school; }
     [TYPE='commercial']    { polygon-fill: @industrial; }
     [TYPE='common']        { polygon-fill: @park; }
@@ -327,39 +329,26 @@ Map {
 }
 
 //building icons
-#buildings {
-    [zoom>=12][AREA>30000],
-    [zoom>=14][AREA<=30000] 
-    {
+#buildings [zoom>=15] {
     [TYPE='church'], [TYPE='chapel'] {
-    marker-file: url(religious-christian-12.svg); 
-    [zoom>=16] {marker-file: url(religious-christian-12.svg);
-        }
+    marker-file: url(religious-christian-12.svg);
     }
     [TYPE='university'] {
     marker-file: url(college-12.svg);
-    [zoom>=16] {marker-file: url(college-24.svg);
-        }
     }
     [TYPE='school'] {
     marker-file: url(school-18.svg); 
     }
     [TYPE='public'] {
     marker-file: url(town-hall-12.svg);
-    [zoom>=16] {marker-file: url(town-hall-24.svg);
-        }
-    }  
-  }  
+    }
 }
 
-
-//pitch-18.svg, rail-18.svg
-//rail-above-24.svg, rail-light-18.svg, rail-metro-18.svg, religious-christian-18.svg
-//zoo-18.svg
 
 #points [zoom>=15] {
   [type='hospital'] {
   marker-file: url(hospital-12.svg);
+  marker-fill: red;
 	}
   [type='bus_stop'] {
   marker-file: url(bus-12.svg);
@@ -371,14 +360,14 @@ Map {
   marker-file: url(fuel-12.svg);
 	}
   [type='parking'] {
-  marker-file: url(parking-18.svg);
+  marker-file: url(parking-12.svg);
 	}
-  //[type='park'] {
-  //marker-file: url(park2-12.svg);
-  //	}
+  [type='park'] {
+  marker-file: url(park2-12.svg);
+  	}
 }
 //consider adding icons for other types of buildings ‘yes’, 
-//hangar, apartments, house, 
+//hangar, apartments, house 
 
 // ==================================================================
 // WATER AREAS
@@ -386,28 +375,28 @@ Map {
 
 #waterlow
 {
-  [zoom>=5][zoom<6][AREA > 1000000000]
+  [zoom>=5] [zoom<6] [AREA > 1000000000]
     {
     polygon-fill: @water;
-    ::outline {
-    line-color: darken(@water,25%);
-    line-width: 0.2;
-    line-join: round;
-      }
+    //::outline {
+    //line-color: darken(@water,25%);
+    //line-width: 0.2;
+    //line-join: round;
+    //  }
     }
 }
 
 #watermed
 {
-  [zoom>=6][AREA > 10000000]
+  [zoom>=6] [zoom<9] [AREA > 10000000]
     {
     polygon-fill: @water;
-    ::outline {
-    line-color: darken(@water,25%);
-    line-width: 0.3;
-    line-join: round;
-      }
-    }
+    //::outline {
+    //line-color: darken(@water,25%);
+    //line-width: 0.2;
+    //line-join: round;
+    //  
+  }
 }
 
 #water
@@ -415,23 +404,22 @@ Map {
   [zoom>=9]
     {
     polygon-fill: @water;
-    ::outline {
-    line-color: darken(@water,25%);
-    line-width: 0.5;
-    line-join: round;
-      }
+    //::outline {
+    //line-color: darken(@water,25%);
+    //line-width: 0.2;
+    //line-join: round;
+    //  }
     }
   [zoom>=12]
     {
     polygon-fill: @water;
-    ::outline {
-    line-color: darken(@water,25%);
-    line-width: 1.0;
-    line-join: round;
-      }
+    //::outline {
+    //line-color: darken(@water,25%);
+    //line-width: 0.2;
+    //line-join: round;
+    //  
     }
 }
-
 
 // ==================================================================
 // WATER WAYS
@@ -441,14 +429,15 @@ Map {
   line-color: @water;
   line-width: 1.2;
   }
+
 #waterwayhigh[zoom>=12]{
   line-color: @water;
   line-width: 2.0;
-  ::case {
-    line-color: darken(@water,25%);
-    line-width: 0.3;
-    line-join: round;
-      }
+ //::outline {
+    //line-color: darken(@water,25%);
+    //line-width: 0.2;
+    //line-join: round;
+    //  }
 }
 
 #waterwaysnew [zoom>=8]{
@@ -456,13 +445,11 @@ Map {
   line-width: 2.0;
 }
 
-
 // ==================================================================
 //   ROAD & RAIL LINES
 // ==================================================================
 
 // At lower zoomlevels, just show major automobile routes: motorways and trunks.
-
 
 #roadslow[zoom>=7] {
   [TYPE='motorway'] { line-color: @motorway_line; line-width: 1.0 }
@@ -554,21 +541,16 @@ Map {
 // AEROWAYS
 // ================================================================== */
 
-//**May want to add icons for airports**
 #aeroway[zoom>6] {
     [TYPE='runway'] { 
     line-width: 3;
-  	line-color:@aeroway;
-    [zoom > 9] {
-    marker-file: url(airport-12.svg);
-      }
-    }
+  	line-color:@aeroway;}
     [zoom>12][TYPE='taxiway'] {
     line-width: 2;
   line-color:@aeroway;
   }
 }
-//Stopped here
+
 /* LABELS.MSS CONTENTS:
  * - place names
  * - area labels
@@ -686,13 +668,15 @@ Map {
   line-color:@admin_2;
   line-width:6;
 }
-//admin level 4 is meso regions, 5 is metropolitan areas, 6 is micro-regions
-//7 is municipalities, 8 is districts, 9 is suburbs and neighborhoods
-//info not needed for current map purpose
-//place info includes names,population,admin-leve
+
+Info For Admin Levels: 4 is meso regions, 5 is metropolitan areas, 
+6 is micro-regions, 7 is municipalities, 8 is districts, 
+9 is suburbs and neighborhoods
+info not needed for current map purpose as place layer includes this info
+
 */
 
-#place [zoom>=7]
+#place [zoom>=8]
 {
   [TYPE="city"] {
   text-name:'[NAME]';
@@ -884,9 +868,6 @@ adminpoly includes the following admin levels:
 #naturalnames [zoom>=14]{
     text-name:'[name]';
     text-placement: point;
-	//marker-fill:black;
-    //marker-width:2px;
-  	//marker-height:2px;
     [type='riverbank'] {
       text-placement: line;
    	}
@@ -947,7 +928,8 @@ adminpoly includes the following admin levels:
   [type='parking'] {
     marker-file: url(parking-12.svg); }
   [type='hospital'] {
-    marker-file: url(hospital-12.svg); }
+    marker-file: url(hospital-12.svg); 
+  	marker-fill: red;}
   //[type='apartments'] {
   //  marker-file: url(); }
   [type='public_building'], [type='public'] {
@@ -982,4 +964,6 @@ adminpoly includes the following admin levels:
     marker-file: url(industrial-12.svg); }
 }
 
-
+#aerowayicons [zoom > 9] {
+    marker-file: url(airport-12.svg); 
+}
